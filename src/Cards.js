@@ -1,26 +1,59 @@
 import React from 'react';
-import { 
-  Card,
-  CardBody,
-  CardTitle,
-  CardSubtitle,
-  CardText,
-  CardImg
+import {
+    Row,
+    Col,
+    Card,
+    CardBody,
+    CardTitle,
+    CardSubtitle,
+    CardText,
+    CardImg
 } from 'reactstrap';
 
-
 const Cards = () => {
+
+    const data = [
+        {
+            Heading: "spider man",
+            Subheading: "is da bomb",
+            Price: 1000000,
+        },
+        {
+            Heading: "spider man",
+            Subheading: "is da bomb",
+            Price: 1000000,
+            showBridge: true,
+        },
+        {
+            Heading: "spider man",
+            Subheading: "is da bomb",
+            Price: 1000000,
+        },
+        {
+            Heading: "spider man",
+            Subheading: "is da bomb",
+            Price: 1000000,
+        },
+    ]
+
+    //const pic = 
+
   return (
     <div>
-        <Card className="shadow">
-            <CardImg top width="100%" src="https://cdn.vox-cdn.com/thumbor/Md4vxxazIX3_4SAMluJvjEKCers=/0x0:655x365/920x613/filters:focal(249x23:353x127):format(webp)/cdn.vox-cdn.com/uploads/chorus_image/image/55356661/spider_man_homecoming.0.jpg" alt="card pic" />
-            <CardBody>
-                <CardTitle className="text-capitalize">spider man</CardTitle>
-                <CardSubtitle className="text-capitalize"><small>is da bomb</small></CardSubtitle>
-                <hr/>
-                <CardText className="text-success text-right">$1,000,000</CardText>
-            </CardBody>
-        </Card>
+        <Row>
+            {data.map(item => (
+            <Col key={item.Heading}>
+                <Card style={{width:"300px", height:"auto"}} className="shadow">
+                    {item.showBridge ? <CardImg top height="150px" width="100%" src="https://ih0.redbubble.net/image.9487584.0600/pp,550x550.jpg" alt="golden gate bridge"/> : <CardImg top height="150px" width="100%" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRbmDSPoVhPaWkpmlsCFKh4HTbEjnobbuks8SJBAkUA7a7RZEGr&s" alt="black background"/>}
+                    <CardBody>
+                        <CardTitle className="text-capitalize">{item.Heading}</CardTitle>
+                        <CardSubtitle className="text-capitalize"><small>{item.Subheading}</small></CardSubtitle>
+                        <hr/>
+                        <CardText className="text-success text-right">${item.Price}</CardText>
+                    </CardBody>
+                </Card>
+            </Col>))}
+        </Row>
     </div>
   );
 }
