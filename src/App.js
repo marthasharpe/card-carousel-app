@@ -1,4 +1,7 @@
 import React from 'react';
+import {
+  Container
+} from 'reactstrap';
 import { library } from '@fortawesome/fontawesome-svg-core';
 import { faImage } from '@fortawesome/free-solid-svg-icons';
 import Cards from './Cards';
@@ -8,10 +11,10 @@ library.add(faImage);
 
 const App = () => {
   return (
-    <div>
+    <Container className="align-items-center fluid">
       <h1>Sort</h1>
       <Cards />
-    </div>
+    </Container>
   );
 }
 

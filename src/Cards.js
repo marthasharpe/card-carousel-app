@@ -6,56 +6,30 @@ import {
     CardBody,
     CardTitle,
     CardSubtitle,
-    CardText,
-    CardImg
+    CardImg,
+    CardFooter,
 } from 'reactstrap';
+import json from './UIE-InterviewProject'
 
 const Cards = () => {
 
-    const data = [
-        {
-            Heading: "spider man",
-            Subheading: "is da bomb",
-            Price: 1000000,
-        },
-        {
-            Heading: "spider man",
-            Subheading: "is da bomb",
-            Price: 1000000,
-            showBridge: true,
-        },
-        {
-            Heading: "spider man",
-            Subheading: "is da bomb",
-            Price: 1000000,
-        },
-        {
-            Heading: "spider man",
-            Subheading: "is da bomb",
-            Price: 1000000,
-        },
-    ]
+    const data = json;
 
-    //const pic = 
-
-  return (
-    <div>
-        <Row>
+    return (
+        <Row className="justify-content-center fluid" style={{height: "auto"}}>
             {data.map(item => (
-            <Col key={item.Heading}>
-                <Card style={{width:"300px", height:"auto"}} className="shadow">
+            <Col className="align-items-center fluid" key={item.Heading}>
+                <Card style={{width:"200px", height:"100%"}} className="shadow rounded">
                     {item.showBridge ? <CardImg top height="150px" width="100%" src="https://ih0.redbubble.net/image.9487584.0600/pp,550x550.jpg" alt="golden gate bridge"/> : <CardImg top height="150px" width="100%" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRbmDSPoVhPaWkpmlsCFKh4HTbEjnobbuks8SJBAkUA7a7RZEGr&s" alt="black background"/>}
                     <CardBody>
                         <CardTitle className="text-capitalize">{item.Heading}</CardTitle>
                         <CardSubtitle className="text-capitalize"><small>{item.Subheading}</small></CardSubtitle>
-                        <hr/>
-                        <CardText className="text-success text-right">${item.Price}</CardText>
                     </CardBody>
+                    <CardFooter className="text-success text-right">${item.Price}</CardFooter>
                 </Card>
             </Col>))}
         </Row>
-    </div>
-  );
+    );
 }
 
 export default Cards;
