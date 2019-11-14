@@ -14,10 +14,9 @@ import {
 const Cards = (props) => {
 
     return (
-        <Row>
+        <Row style={{justifyContent: "center"}}>
             {props.data.map(item => (
                 <Col
-                    className="align-items-center fluid"
                     key={item.Heading}
                 >
                     <Card
