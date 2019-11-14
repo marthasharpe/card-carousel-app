@@ -6,21 +6,29 @@ import {
     DropdownItem,
 } from 'reactstrap';
 
-const Sort = () => {
+const Sort = (props) => {
+    
     const [dropdownOpen, setDropdownOpen] = useState(false);
 
     const toggle = () => setDropdownOpen(!dropdownOpen);
     
+    const sortHeading = () => console.log(props.data.map((object) => Object.values(object)));
+    //sort heading is data.heading.values put into an array and sorted alphanumerically returning the whole object
+    const sortSubheading = () => console.log("subheading");
+    const sortHighPrice = () => console.log("high price");
+    const sortLowPrice = () => console.log("low price");
+
+
     return (
       <Dropdown isOpen={dropdownOpen} toggle={toggle}>
         <DropdownToggle caret>
             Sort
         </DropdownToggle>
         <DropdownMenu>
-            <DropdownItem>Heading</DropdownItem>
-            <DropdownItem>Subheading</DropdownItem>
-            <DropdownItem>Price: low - high</DropdownItem>
-            <DropdownItem>Price: high - low</DropdownItem>
+            <DropdownItem onClick={sortHeading}>Heading</DropdownItem>
+            <DropdownItem onClick={sortSubheading}>Subheading</DropdownItem>
+            <DropdownItem onClick={sortLowPrice}>Price: low - high</DropdownItem>
+            <DropdownItem onClick={sortHighPrice}>Price: high - low</DropdownItem>
         </DropdownMenu>
       </Dropdown>
     );
