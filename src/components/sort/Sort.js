@@ -25,22 +25,22 @@ const Sort = (props) => {
         </DropdownToggle>
         <DropdownMenu>
             <DropdownItem
-                onClick={() => props.sortHeading(props.data.sort(( a, b ) => a.Heading > b.Heading ? 1 : -1))}
+                onClick={() => props.sortHeading(props.data.slice().sort(( a, b ) => a.Heading > b.Heading ? 1 : -1))}
                 >
                 Heading
             </DropdownItem>
             <DropdownItem
-                onClick={() => props.sortSubheading(props.data.sort(( a, b ) => a.Subheading > b.Subheading ? 1 : -1))}
+                onClick={() => props.sortSubheading(props.data.slice().sort(( a, b ) => a.Subheading > b.Subheading ? 1 : -1))}
                 >
                 Subheading
             </DropdownItem>
             <DropdownItem
-                onClick={() => props.sortLowPrice(props.data.sort(( a, b ) => a.Price > b.Price ? 1 : -1))}
+                onClick={() => props.sortLowPrice(props.data.slice().sort(( a, b ) => a.Price > b.Price ? 1 : -1))}
                 >
                 Price: low - high
             </DropdownItem>
             <DropdownItem
-                onClick={() => props.sortHighPrice(props.data.sort(( a, b ) => a.Price < b.Price ? 1 : -1))}
+                onClick={() => props.sortHighPrice(props.data.slice().sort(( a, b ) => a.Price < b.Price ? 1 : -1))}
                 >
                 Price: high - low
             </DropdownItem>

@@ -6,27 +6,27 @@ export const SORT_HIGH_PRICE = 'SORT_HIGH_PRICE';
 export const sortHeading = (data) => {
     return {
         type: SORT_HEADING,
-        data
+        data: data
     }
 }
 
 export const sortSubheading = (data) => {
     return {
         type: SORT_SUBHEADING,
-        data
+        data: data
     }
 }
 
 export const sortLowPrice = (data) => {
     return {
         type: SORT_LOW_PRICE,
-        data
+        data: data
     }
 }
 
 export const sortHighPrice = (data) => {
     return {
         type: SORT_HIGH_PRICE,
-        data
+        data: data
     }
 }
