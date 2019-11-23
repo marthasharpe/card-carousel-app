@@ -12,7 +12,12 @@ const Sort = (props) => {
 
     const toggle = () => setDropdownOpen(!dropdownOpen);
     
-    const sortHeading = () => console.log(props.data.map((object) => Object.values(object)));
+    const sortHeading = () => {
+        let headingSort = props.data.sort(( a, b ) => a.Heading > b.Heading ? 1 : -1 );
+        props.setData(headingSort);
+        console.log(headingSort)
+    }
+
     //sort heading is data.heading.values put into an array and sorted alphanumerically returning the whole object
     const sortSubheading = () => console.log("subheading");
     const sortHighPrice = () => console.log("high price");

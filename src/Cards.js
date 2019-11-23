@@ -39,7 +39,7 @@ const Cards = (props) => {
                         <CardFooter
                             className="text-success text-right"
                         >
-                        ${item.Price}
+                        ${item.Price.toString().replace(/(\d+)(?=(\d{3}))/g, '$1,')}
                         </CardFooter>
                     </Card>
                 </Col>
