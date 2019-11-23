@@ -5,38 +5,59 @@ import {
     DropdownMenu,
     DropdownItem,
 } from 'reactstrap';
+import { connect } from 'react-redux';
+import {
+    sortHeading,
+    sortSubheading,
+    sortLowPrice,
+    sortHighPrice
+} from './../../actions/actionCreators';
 
 const Sort = (props) => {
     
     const [dropdownOpen, setDropdownOpen] = useState(false);
-
     const toggle = () => setDropdownOpen(!dropdownOpen);
-    
-    const sortHeading = () => {
-        let headingSort = props.data.sort(( a, b ) => a.Heading > b.Heading ? 1 : -1 );
-        props.setData(headingSort);
-        console.log(headingSort)
-    }
-
-    //sort heading is data.heading.values put into an array and sorted alphanumerically returning the whole object
-    const sortSubheading = () => console.log("subheading");
-    const sortHighPrice = () => console.log("high price");
-    const sortLowPrice = () => console.log("low price");
-
 
     return (
-      <Dropdown isOpen={dropdownOpen} toggle={toggle}>
+    <Dropdown isOpen={dropdownOpen} toggle={toggle}>
         <DropdownToggle caret>
             Sort
         </DropdownToggle>
         <DropdownMenu>
-            <DropdownItem onClick={sortHeading}>Heading</DropdownItem>
-            <DropdownItem onClick={sortSubheading}>Subheading</DropdownItem>
-            <DropdownItem onClick={sortLowPrice}>Price: low - high</DropdownItem>
-            <DropdownItem onClick={sortHighPrice}>Price: high - low</DropdownItem>
+            <DropdownItem
+                onClick={() => props.sortHeading(props.data.sort(( a, b ) => a.Heading > b.Heading ? 1 : -1))}
+                >
+                Heading
+            </DropdownItem>
+            <DropdownItem
+                onClick={() => props.sortSubheading(props.data.sort(( a, b ) => a.Subheading > b.Subheading ? 1 : -1))}
+                >
+                Subheading
+            </DropdownItem>
+            <DropdownItem
+                onClick={() => props.sortLowPrice(props.data.sort(( a, b ) => a.Price > b.Price ? 1 : -1))}
+                >
+                Price: low - high
+            </DropdownItem>
+            <DropdownItem
+                onClick={() => props.sortHighPrice(props.data.sort(( a, b ) => a.Price < b.Price ? 1 : -1))}
+                >
+                Price: high - low
+            </DropdownItem>
         </DropdownMenu>
       </Dropdown>
     );
   }
   
-  export default Sort;
+const mapStateToProps = ({ data }) => ({
+    data
+})
+
+const mapDispatchToProps = {
+    sortHeading,
+    sortSubheading,
+    sortLowPrice,
+    sortHighPrice,
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(Sort);

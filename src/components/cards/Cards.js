@@ -9,7 +9,7 @@ import {
     CardImg,
     CardFooter,
 } from 'reactstrap';
-
+import { connect } from 'react-redux';
 
 const Cards = (props) => {
 
@@ -48,4 +48,8 @@ const Cards = (props) => {
     );
 }
 
-export default Cards;
+const mapStateToProps = ({ data }) => ({
+    data
+})
+
+export default connect(mapStateToProps, null)(Cards);
