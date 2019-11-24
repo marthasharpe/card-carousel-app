@@ -12,6 +12,7 @@ import {
     sortLowPrice,
     sortHighPrice
 } from './../../actions/actionCreators';
+import './Sort.scss'
 
 const Sort = (props) => {
     
