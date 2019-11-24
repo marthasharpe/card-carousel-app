@@ -10,7 +10,7 @@ import {
 } from 'reactstrap';
 import Carousel from 'react-multi-carousel';
 import 'react-multi-carousel/lib/styles.css';
-import './CardCarousel';
+import './CardCarousel.scss';
 
 const responsive = {
     superLargeDesktop: {
