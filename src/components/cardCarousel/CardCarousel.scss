@@ -4,7 +4,7 @@
     margin: 10px 50px 50px 50px;
 }
 
-.carousel-control-next,
-.carousel-control-prev {
-    width: 50px !important;
+.react-multi-carousel-item {
+    display: flex;
+    justify-content: center;
 }
