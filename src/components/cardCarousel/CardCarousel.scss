@@ -1,7 +1,13 @@
 .card {
     width: 240px;
-    height: 340px;
+    height: 320px;
     margin: 10px 50px 50px 50px;
+}
+
+.card-img-top {
+    height: 40%;
+    width: 100%;
+    object-fit: cover;
 }
 
 .react-multi-carousel-item {

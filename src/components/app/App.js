@@ -7,7 +7,7 @@ import './App.scss';
 const App = () => {
 
   return (
-    <Container fluid>
+    <Container fluid data-test='AppComponent'>
       <Sort />
       <CardCarousel />
     </Container>

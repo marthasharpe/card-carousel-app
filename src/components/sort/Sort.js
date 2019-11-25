@@ -20,7 +20,7 @@ const Sort = (props) => {
     const toggle = () => setDropdownOpen(!dropdownOpen);
 
     return (
-    <Dropdown isOpen={dropdownOpen} toggle={toggle}>
+    <Dropdown isOpen={dropdownOpen} toggle={toggle} data-test="DropDown">
         <DropdownToggle caret>
             Sort
         </DropdownToggle>

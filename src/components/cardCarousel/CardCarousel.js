@@ -40,13 +40,13 @@ const CardCarousel = (props) => {
     const cards = props.data.map(obj => {
         return (
             <Card className="shadow rounded"
-                style={{width: 240, height: 340}}
+                style={{width: 220, height: 340}}
                 key={obj.Heading}>
                 {/* display image if in json data */}
                 {obj.showBridge ? 
-                    <CardImg top height="150px" width="100%" src="https://ih0.redbubble.net/image.9487584.0600/pp,550x550.jpg" alt="golden gate bridge"/>
+                    <CardImg top src="https://res.cloudinary.com/bguggie/image/upload/v1425514888/wide_ggbridge_bg_teneax.jpg" alt="golden gate bridge"/>
                     :
-                    <CardImg top height="150px" width="100%" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRbmDSPoVhPaWkpmlsCFKh4HTbEjnobbuks8SJBAkUA7a7RZEGr&s" alt="black background"/>}
+                    <CardImg top src="https://res.cloudinary.com/bguggie/image/upload/v1425514882/darktiles_bg_gike55.jpg" alt="black background"/>}
                 <CardBody>
                     <CardTitle className="text-capitalize">
                         {obj.Heading}
